@@ -1,0 +1,36 @@
+<div class="beer-single container text-left py-5">
+    
+    {{#each beers}}
+        <div class="row">
+            <div class="col col-sm-2 p-5">
+                <figure>
+                    <img src="{{ image_url }}" class="img-fluid" />
+                </figure>
+            </div>
+            <div class="col col-sm-10 p-4">
+                <div class="content">
+                    <h3 class="pb-2">
+                        {{name}}<br />
+                        <small>{{tagline}}</small>
+                    </h3>
+
+                    <p>
+                        {{description}}
+                    </p>
+
+                    <p><strong>Food pairing</strong></p>
+                    <ul>
+                        {{#each this.food_pairing}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+
+                    <p>
+                        <strong>Brewers Tips:</strong> {{this.brewers_tips}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+
+</div>
